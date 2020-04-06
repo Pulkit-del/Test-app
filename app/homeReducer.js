@@ -8,7 +8,7 @@ export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case homeConstants.IS_LOGGED_IN_VALUE:
         return {
-            ...state,
+            // ...state,
             isLoggedin: action.isLoggedin
         }
     break;

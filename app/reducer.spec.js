@@ -1,11 +1,11 @@
-import { homeConstants } from '../app/homeConstants';
-import { reducer } from '../app/homeReducer';
+import { homeConstants } from './homeConstants';
+import { reducer, initialState } from './homeReducer';
 
 describe('app reducer', () => {
     describe('reducer', () => {
         it('should return the default state', () => {
-            expect(reducer(undefined, {})).toBe("true")
-        })
+            expect(reducer(undefined, {})).toBe(initialState)
+        }),
 
         it('should update the state', () => {
             const value = "false"
@@ -13,7 +13,7 @@ describe('app reducer', () => {
                 type: homeConstants.IS_LOGGED_IN_VALUE,
                 isLoggedin: value
             }
-            expect(reducer(undefined, action)).toBe(value)
+            expect(reducer(initialState, action)).toStrictEqual({"isLoggedin": "false"})
         })
     })
 })

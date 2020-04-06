@@ -1,16 +1,16 @@
-import { homeActions } from '../app/homeActions';
-import { homeConstants} from '../app/homeConstants'
+import { homeActions } from './homeActions';
+import { homeConstants} from './homeConstants'
 
 describe('homeActions', () => {
-    const value = "true"
+    const x = "true"
 
     describe('isLoggedin', () => {
-        it('should fire action', () => {
+        it('should create action', () => {
             const expectedAction = {
                 type: homeConstants.IS_LOGGED_IN_VALUE,
-                isLoggedin: value
+                isLoggedin: x
             }
-            expect(homeActions.isLoggedin(value)).toEqual(expectedAction)
+            expect(homeActions.isLoggedin(x)).toEqual(expectedAction)
         })
     })
 })
